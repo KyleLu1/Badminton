@@ -91,8 +91,12 @@ public class Player extends MovingThing{
     }
     
     
-    public void draw(Graphics window) {
-        window.drawImage(image, getX(), getY(), getWidth(), getHeight(), null);
+
+
+public void draw(Graphics window) {
+        //uncomment after you write the set and get methods
+        window.setColor(Color.BLACK);
+        window.fillRect(getX(), getY(), getWidth(), getHeight());
     }
     
     

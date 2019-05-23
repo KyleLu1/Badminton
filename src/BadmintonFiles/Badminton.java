@@ -22,6 +22,7 @@ import java.awt.event.ActionListener;
  */
 public class Badminton extends Canvas implements KeyListener, Runnable {
     private Birdie birdie;
+    private Block net;
     private Player leftPlayer;
     private Player rightPlayer;
     private boolean[] keysLeft;
@@ -33,6 +34,7 @@ public class Badminton extends Canvas implements KeyListener, Runnable {
         birdie = new Birdie(350,200,30,50,3,3);
         leftPlayer = new Player(40, 200, 15, 75, 5);
         rightPlayer = new Player(730, 200, 15, 75, 5);
+        net = new Block(495, 600, 10, 50);
         
         keysLeft = new boolean[4];
         keysLeft = new boolean[]{false, false, false, false};
@@ -61,10 +63,17 @@ public class Badminton extends Canvas implements KeyListener, Runnable {
         
         Graphics graphToBack = back.createGraphics();
         
+        graphToBack.setColor(Color.WHITE);
+        graphToBack.fillRect(440, 520, 80, 80);
+        
         birdie.moveAndDraw(graphToBack);
         leftPlayer.draw(graphToBack);
         rightPlayer.draw(graphToBack);
         
+ 
+
+        graphToBack.setColor(Color.red);
+        System.out.print("hi");
         
         
         
@@ -100,7 +109,7 @@ public class Badminton extends Canvas implements KeyListener, Runnable {
             rightPlayer.moveLeftAndDraw(graphToBack);
         }
         
-        twoDGraph.drawImage(back, null, 0, 0);
+       twoDGraph.drawImage(back, null, 0, 0);
         
         
     }
@@ -179,7 +188,7 @@ public class Badminton extends Canvas implements KeyListener, Runnable {
     public void run() {
         try {
             while (true) {
-                Thread.currentThread().sleep(8);
+                Thread.currentThread().sleep(5);
                 repaint();
             }
         } catch (Exception e) {
