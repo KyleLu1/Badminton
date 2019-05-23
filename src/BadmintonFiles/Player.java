@@ -53,6 +53,44 @@ public class Player extends MovingThing{
         }
     }
 
+    public void draw(Graphics window, Color col) {
+        window.setColor(col);
+        window.fillRect(getX(), getY(), getWidth(), getHeight());
+    }
+    
+    public void moveUpAndDraw(Graphics window) {
+        draw(window, Color.white);
+
+        setY(getY() - getSpeed());
+
+        draw(window);
+    }
+
+    public void moveDownAndDraw(Graphics window) {
+        draw(window, Color.white);
+
+        setY(getY() + getSpeed());
+
+        draw(window);
+    }
+    
+    public void moveLeftAndDraw(Graphics window){
+        draw(window, Color.white);
+
+        setX(getX() - getSpeed());
+
+        draw(window);
+    }
+    
+    public void moveRightAndDraw(Graphics window){
+        draw(window, Color.white);
+
+        setX(getX() + getSpeed());
+
+        draw(window);
+    }
+    
+    
     public void draw(Graphics window) {
         window.drawImage(image, getX(), getY(), getWidth(), getHeight(), null);
     }
@@ -63,5 +101,7 @@ public class Player extends MovingThing{
     
     
     
-    
+    public String toString() {
+        return super.toString() + " " + speed;
+    }
 }
