@@ -32,9 +32,9 @@ public class Badminton extends Canvas implements KeyListener, Runnable {
     public Badminton(){
         //instantiate objects
         birdie = new Birdie(350,200,30,50,3,3);
-        leftPlayer = new Player(40, 200, 15, 75, 5);
-        rightPlayer = new Player(730, 200, 15, 75, 5);
-        net = new Block(495, 600, 10, 50);
+        leftPlayer = new Player(40, 200, 100, 100, 5);
+        rightPlayer = new Player(730, 200, 80, 40, 5);
+        net = new Block(495, 600, 10, 50, 0);
         
         keysLeft = new boolean[4];
         keysLeft = new boolean[]{false, false, false, false};
@@ -69,11 +69,11 @@ public class Badminton extends Canvas implements KeyListener, Runnable {
         birdie.moveAndDraw(graphToBack);
         leftPlayer.draw(graphToBack);
         rightPlayer.draw(graphToBack);
+        //net.draw(graphToBack);
         
  
 
         graphToBack.setColor(Color.red);
-        System.out.print("hi");
         
         
         
@@ -116,31 +116,31 @@ public class Badminton extends Canvas implements KeyListener, Runnable {
     
     public void keyPressed(KeyEvent e) {
         //leftplayer
-        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            keysLeft[0] = true;
-        }
-        if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            keysLeft[1] = true;
+        if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+            keysRight[0] = true;
         }
         if (e.getKeyCode() == KeyEvent.VK_UP) {
-            keysLeft[2] = true;
+            keysRight[1] = true;
         }
-        if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            keysLeft[3] = true;
+        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+            keysRight[2] = true;
+        }
+        if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+            keysRight[3] = true;
         }
       
         //rightplayer
-        if (e.getKeyCode() == KeyEvent.VK_A) {
-            keysRight[0] = true;
-        }
-        if (e.getKeyCode() == KeyEvent.VK_D) {
-            keysRight[1] = true;
+        if (e.getKeyCode() == KeyEvent.VK_S) {
+            keysLeft[0] = true;
         }
         if (e.getKeyCode() == KeyEvent.VK_W) {
-            keysRight[2] = true;
+            keysLeft[1] = true;
         }
-        if (e.getKeyCode() == KeyEvent.VK_S) {
-            keysRight[3] = true;
+        if (e.getKeyCode() == KeyEvent.VK_A) {
+            keysLeft[2] = true;
+        }
+        if (e.getKeyCode() == KeyEvent.VK_D) {
+            keysLeft[3] = true;
         }
       
         
@@ -149,31 +149,31 @@ public class Badminton extends Canvas implements KeyListener, Runnable {
 
     public void keyReleased(KeyEvent e) {
         //leftplayer
-        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            keysLeft[0] = false;
-        }
-        if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            keysLeft[1] = false;
+        if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+            keysRight[0] = false;
         }
         if (e.getKeyCode() == KeyEvent.VK_UP) {
-            keysLeft[2] = false;
+            keysRight[1] = false;
         }
-        if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            keysLeft[3] = false;
+        if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+            keysRight[2] = false;
+        }
+        if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+            keysRight[3] = false;
         }
       
         //rightplayer
-        if (e.getKeyCode() == KeyEvent.VK_A) {
-            keysRight[0] = false;
-        }
-        if (e.getKeyCode() == KeyEvent.VK_D) {
-            keysRight[1] = false;
+        if (e.getKeyCode() == KeyEvent.VK_S) {
+            keysLeft[0] = false;
         }
         if (e.getKeyCode() == KeyEvent.VK_W) {
-            keysRight[2] = false;
+            keysLeft[1] = false;
         }
-        if (e.getKeyCode() == KeyEvent.VK_S) {
-            keysRight[3] = false;
+        if (e.getKeyCode() == KeyEvent.VK_A) {
+            keysLeft[2] = false;
+        }
+        if (e.getKeyCode() == KeyEvent.VK_D) {
+            keysLeft[3] = false;
         }
       
         repaint();

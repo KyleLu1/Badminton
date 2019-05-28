@@ -25,12 +25,7 @@ public class Player extends MovingThing{
     {
         super(x,y,w,h);
         speed = s;
-         try {
-            URL url = getClass().getResource("Resources/ship.jpg");
-            image = ImageIO.read(url);
-        } catch (Exception e) {
-            //feel free to do something here
-        }
+
     }
     
     public void setSpeed(int s) {
@@ -55,38 +50,78 @@ public class Player extends MovingThing{
 
     public void draw(Graphics window, Color col) {
         window.setColor(col);
-        window.fillRect(getX(), getY(), getWidth(), getHeight());
+        
+        int x = getX();
+        int y = getY();
+        int w = getWidth();
+        int h = getHeight();
+        
+        window.drawLine(x, y, x, y-40);
+        window.drawLine(x,y, x-20, y+20);
+        window.drawLine(x,y, x +20, y+20);
+        window.drawOval(x-10, y-60, 20, 20);
+        window.drawLine(x, y-20 , x+25, y-30);
+        window.drawLine(x, y-20 , x-25, y-30);
     }
     
     public void moveUpAndDraw(Graphics window) {
-        draw(window, Color.white);
 
-        setY(getY() - getSpeed());
-
+        window.setColor(Color.WHITE);
+        
+        window.drawLine(getX(), getY(), getX(), getY()-40);
+        window.drawLine(getX(),getY(), getX()-20, getY()+20);
+        window.drawLine(getX(),getY(), getX() +20, getY()+20);
+        window.drawOval(getX()-10, getY()-60, 20, 20);
+        window.drawLine(getX(), getY()-20 , getX()+25, getY()-30);
+        window.drawLine(getX(), getY()-20 , getX()-25, getY()-30);
+        
+        window.fillRect(getX(),getY(),getWidth(),getHeight());
+        move("UP");
         draw(window);
     }
 
     public void moveDownAndDraw(Graphics window) {
-        draw(window, Color.white);
-
-        setY(getY() + getSpeed());
-
+        window.setColor(Color.WHITE);
+        
+        window.drawLine(getX(), getY(), getX(), getY()-40);
+        window.drawLine(getX(),getY(), getX()-20, getY()+20);
+        window.drawLine(getX(),getY(), getX() +20, getY()+20);
+        window.drawOval(getX()-10, getY()-60, 20, 20);
+        window.drawLine(getX(), getY()-20 , getX()+25, getY()-30);
+        window.drawLine(getX(), getY()-20 , getX()-25, getY()-30);
+        
+        window.fillRect(getX(),getY(),getWidth(),getHeight());
+        move("DOWN");
         draw(window);
     }
     
     public void moveLeftAndDraw(Graphics window){
-        draw(window, Color.white);
-
-        setX(getX() - getSpeed());
-
+        window.setColor(Color.WHITE);
+        
+        window.drawLine(getX(), getY(), getX(), getY()-40);
+        window.drawLine(getX(),getY(), getX()-20, getY()+20);
+        window.drawLine(getX(),getY(), getX() +20, getY()+20);
+        window.drawOval(getX()-10, getY()-60, 20, 20);
+        window.drawLine(getX(), getY()-20 , getX()+25, getY()-30);
+        window.drawLine(getX(), getY()-20 , getX()-25, getY()-30);
+        
+        window.fillRect(getX(),getY(),getWidth(),getHeight());
+        move("LEFT");
         draw(window);
     }
     
     public void moveRightAndDraw(Graphics window){
-        draw(window, Color.white);
-
-        setX(getX() + getSpeed());
-
+        window.setColor(Color.WHITE);
+        
+        window.drawLine(getX(), getY(), getX(), getY()-40);
+        window.drawLine(getX(),getY(), getX()-20, getY()+20);
+        window.drawLine(getX(),getY(), getX() +20, getY()+20);
+        window.drawOval(getX()-10, getY()-60, 20, 20);
+        window.drawLine(getX(), getY()-20 , getX()+25, getY()-30);
+        window.drawLine(getX(), getY()-20 , getX()-25, getY()-30);
+        
+        window.fillRect(getX(),getY(),getWidth(),getHeight());
+        move("RIGHT");
         draw(window);
     }
     
@@ -94,10 +129,20 @@ public class Player extends MovingThing{
 
 
 public void draw(Graphics window) {
-        //uncomment after you write the set and get methods
-        window.setColor(Color.BLACK);
-        window.fillRect(getX(), getY(), getWidth(), getHeight());
+ 
+        
+        window.setColor(Color.black);
+        
+        window.drawLine(getX(), getY(), getX(), getY()-40);
+        window.drawLine(getX(),getY(), getX()-20, getY()+20);
+        window.drawLine(getX(),getY(), getX() +20, getY()+20);
+        window.drawOval(getX()-10, getY()-60, 20, 20);
+        window.drawLine(getX(), getY()-20 , getX()+25, getY()-30);
+        window.drawLine(getX(), getY()-20 , getX()-25, getY()-30);
+        
+        
     }
+    
     
     
     

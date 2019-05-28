@@ -16,9 +16,17 @@ public class Block extends MovingThing{
     
     private Color color;
         
+    
     public Block(int x, int y, int w, int h)
     {
         super(x, y, w, h);
+  
+    }
+    
+    public Block(int x, int y, int w, int h, int s)
+    {
+        super(x, y, w, h);
+        setSpeed(s);
     }
     
     public Color getColor() {
@@ -35,7 +43,7 @@ public class Block extends MovingThing{
     
     public void draw(Graphics window) {
         //uncomment after you write the set and get methods
-        window.setColor(color);
+        window.setColor(color.BLACK);
         window.fillRect(getX(), getY(), getWidth(), getHeight());
     }
 
