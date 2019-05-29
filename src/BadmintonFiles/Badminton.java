@@ -31,10 +31,12 @@ public class Badminton extends Canvas implements KeyListener, Runnable {
     
     public Badminton(){
         //instantiate objects
-        birdie = new Birdie(350,200,30,50,3,3);
-        leftPlayer = new Player(40, 200, 100, 100, 5);
-        rightPlayer = new Player(730, 200, 80, 40, 5);
-        net = new Block(495, 600, 10, 50, 0);
+        birdie = new Birdie(350,200,30,50,2,2);
+        leftPlayer = new Player(40, 200, 40,80, 5);
+        rightPlayer = new Player(730, 200, 40, 80, 5);
+        net = new Block(400, 460, 10, 120);
+       
+        
         
         keysLeft = new boolean[4];
         keysLeft = new boolean[]{false, false, false, false};
@@ -57,11 +59,18 @@ public class Badminton extends Canvas implements KeyListener, Runnable {
     {
         Graphics2D twoDGraph = (Graphics2D) window;
         
+        
+        
         if (back == null) {
             back = (BufferedImage) (createImage(getWidth(), getHeight()));
         }
         
         Graphics graphToBack = back.createGraphics();
+        
+  
+
+        
+        
         
         graphToBack.setColor(Color.WHITE);
         graphToBack.fillRect(440, 520, 80, 80);
@@ -69,16 +78,40 @@ public class Badminton extends Canvas implements KeyListener, Runnable {
         birdie.moveAndDraw(graphToBack);
         leftPlayer.draw(graphToBack);
         rightPlayer.draw(graphToBack);
-        //net.draw(graphToBack);
+        net.draw(graphToBack);
         
  
 
         graphToBack.setColor(Color.red);
         
+        if (!(birdie.getY() >= 20 && birdie.getY() <= 450)) {
+            birdie.setySpeed(-birdie.getySpeed());
+        }
+        
+        if (!(birdie.getX() >= 20 && birdie.getX() <= 760)) {
+            birdie.setxSpeed(-birdie.getxSpeed());
+        }
         
         
         
-        
+        if (birdie.didCollideLeft(leftPlayer)
+                && (birdie.didCollideTop(leftPlayer) || birdie.didCollideBottom(leftPlayer))) {
+
+            if (birdie.getX() <= leftPlayer.getX() + leftPlayer.getWidth() - Math.abs(birdie.getxSpeed())) {
+                birdie.setySpeed(-birdie.getySpeed());
+            } else {
+                birdie.setxSpeed(-birdie.getxSpeed());
+            }
+        }
+
+        if (birdie.didCollideRight(rightPlayer)
+                && (birdie.didCollideTop(rightPlayer) || birdie.didCollideBottom(rightPlayer))) {
+            if (birdie.getX() + birdie.getWidth() >= rightPlayer.getX() + Math.abs(birdie.getxSpeed())) {
+                birdie.setySpeed(-birdie.getySpeed());
+            } else {
+                birdie.setxSpeed(-birdie.getxSpeed());
+            }
+        }
         
         
         

@@ -12,7 +12,7 @@ import java.awt.Graphics;
  *
  * @author luk8724
  */
-public class Birdie extends Block{
+public class Birdie extends Block implements Collidable{
     
     private int xSpeed;
     private int ySpeed;
@@ -69,6 +69,24 @@ public class Birdie extends Block{
         draw(window);
     }
     
-    
+    public boolean didCollideLeft(Object obj) {
+        Block other = (Block) obj;
+        return getX() <= other.getX() + other.getWidth() + Math.abs(getxSpeed());
+    }
+
+    public boolean didCollideRight(Object obj) {
+        Block other = (Block) obj;
+        return getX() + getWidth() >= other.getX() - Math.abs(getxSpeed());
+    }
+
+    public boolean didCollideTop(Object obj) {
+        Block other = (Block) obj;
+        return getY() >= other.getY() && getY() <= other.getY() + getHeight();
+    }
+
+    public boolean didCollideBottom(Object obj) {
+        Block other = (Block) obj;
+        return getY() + getHeight() >= other.getY() && getY() + getHeight() <= other.getY() + other.getHeight();
+    }
     
 }

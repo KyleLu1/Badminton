@@ -16,7 +16,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import javax.imageio.ImageIO;
 
-public class Player extends MovingThing{
+public class Player extends Block{
     
     private int speed;
     private Image image;
