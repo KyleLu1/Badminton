@@ -28,13 +28,25 @@ public class Badminton extends Canvas implements KeyListener, Runnable {
     private boolean[] keysLeft;
     private boolean[] keysRight;
     private BufferedImage back;
+    private Block bottom;
+    private Block leftWall;
+    private Block rightWall;
+    private Block top;
+    private int leftScore;
+    private int rightScore;
     
     public Badminton(){
         //instantiate objects
         birdie = new Birdie(350,200,30,50,2,2);
         leftPlayer = new Player(40, 200, 40,80, 5);
         rightPlayer = new Player(730, 200, 40, 80, 5);
-        net = new Block(400, 460, 10, 120);
+        net = new Block(400, 380, 10, 120);
+        bottom = new Block(20,500,740,20);
+        leftWall = new Block(0, 0, 20, 520);
+        rightWall = new Block(760, 0, 20, 520);
+        top = new Block(0, 0, 780, 20);
+        leftScore = 0;
+        rightScore = 0;
        
         
         
@@ -79,7 +91,13 @@ public class Badminton extends Canvas implements KeyListener, Runnable {
         leftPlayer.draw(graphToBack);
         rightPlayer.draw(graphToBack);
         net.draw(graphToBack);
+        bottom.draw(graphToBack);
+        leftWall.draw(graphToBack);
+        rightWall.draw(graphToBack);
+        top.draw(graphToBack);
         
+        graphToBack.drawString("rightScore = " + rightScore, 450, 540);
+        graphToBack.drawString("leftScore = " + leftScore, 300, 540);
  
 
         graphToBack.setColor(Color.red);
@@ -88,7 +106,7 @@ public class Badminton extends Canvas implements KeyListener, Runnable {
             birdie.setySpeed(-birdie.getySpeed());
         }
         
-        if (!(birdie.getX() >= 20 && birdie.getX() <= 760)) {
+        if (!(birdie.getX() >= 20 && birdie.getX() <= 740)) {
             birdie.setxSpeed(-birdie.getxSpeed());
         }
         
