@@ -5,6 +5,9 @@
  */
 package BadmintonFiles;
 
+import java.awt.Component;
+import javax.swing.JFrame;
+
 /**
  *
  * @author luk8724
@@ -37,6 +40,11 @@ public class TitleFrame extends javax.swing.JFrame {
         titleLabel.setText("Badminton");
 
         startBtn.setText("Start");
+        startBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -81,6 +89,11 @@ public class TitleFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void startBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startBtnActionPerformed
+        // TODO add your handling code here:
+        Tester run = new Tester();
+    }//GEN-LAST:event_startBtnActionPerformed
 
     /**
      * @param args the command line arguments

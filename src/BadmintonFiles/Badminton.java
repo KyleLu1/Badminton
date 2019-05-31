@@ -38,8 +38,8 @@ public class Badminton extends Canvas implements KeyListener, Runnable {
     public Badminton(){
         //instantiate objects
         birdie = new Birdie(350,200,30,50,2,2);
-        leftPlayer = new Player(40, 200, 40,80, 5);
-        rightPlayer = new Player(730, 200, 40, 80, 5);
+        leftPlayer = new Player(60, 420, 40,80, 3);
+        rightPlayer = new Player(720, 420, 40, 80, 3);
         net = new Block(400, 380, 10, 120);
         bottom = new Block(20,500,740,20);
         leftWall = new Block(0, 0, 20, 520);
@@ -96,6 +96,8 @@ public class Badminton extends Canvas implements KeyListener, Runnable {
         rightWall.draw(graphToBack);
         top.draw(graphToBack);
         
+    
+        
         graphToBack.drawString("rightScore = " + rightScore, 450, 540);
         graphToBack.drawString("leftScore = " + leftScore, 300, 540);
  
@@ -135,29 +137,29 @@ public class Badminton extends Canvas implements KeyListener, Runnable {
         
         
         if (keysLeft[0] == true) {
-            leftPlayer.moveUpAndDraw(graphToBack);
+            //leftPlayer.moveUpAndDraw(graphToBack);
         }
         if (keysLeft[1] == true) {
-            leftPlayer.moveDownAndDraw(graphToBack);
+            //leftPlayer.moveDownAndDraw(graphToBack);
         }
         if (keysLeft[2] == true) {
-            leftPlayer.moveRightAndDraw(graphToBack);
+           leftPlayer.moveRightAndDraw(graphToBack);
         }
         if (keysLeft[3] == true) {
-            leftPlayer.moveLeftAndDraw(graphToBack);
+           leftPlayer.moveLeftAndDraw(graphToBack);
         }
         
         if (keysRight[0] == true) {
-            rightPlayer.moveUpAndDraw(graphToBack);
+            //rightPlayer.moveUpAndDraw(graphToBack);
         }
         if (keysRight[1] == true) {
-            rightPlayer.moveDownAndDraw(graphToBack);
+            //rightPlayer.moveDownAndDraw(graphToBack);
         }
         if (keysRight[2] == true) {
             rightPlayer.moveRightAndDraw(graphToBack);
         }
         if (keysRight[3] == true) {
-            rightPlayer.moveLeftAndDraw(graphToBack);
+           rightPlayer.moveLeftAndDraw(graphToBack);
         }
         
        twoDGraph.drawImage(back, null, 0, 0);

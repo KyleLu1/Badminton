@@ -20,6 +20,9 @@ public class Player extends Block{
     
     private int speed;
     private Image image;
+  
+    
+    
     
     public Player(int x, int y, int w, int h, int s)
     {
@@ -55,15 +58,22 @@ public class Player extends Block{
         int y = getY();
         int w = getWidth();
         int h = getHeight();
-        
+        /*
         window.drawLine(x, y, x, y-40);
         window.drawLine(x,y, x-20, y+20);
         window.drawLine(x,y, x +20, y+20);
         window.drawOval(x-10, y-60, 20, 20);
         window.drawLine(x, y-20 , x+25, y-30);
         window.drawLine(x, y-20 , x-25, y-30);
+        */
+        window.drawLine(x+20, y+60, x+20, y+20);
+        window.drawLine(x+20,y+60, x, y+80);
+        window.drawLine(x+20,y+60, x +40, y+80);
+        window.drawOval(x+10, y, 20, 20);
+        window.drawLine(x+20, y+40 , x+45, y+30);
+        window.drawLine(x+20, y+40 , x-5, y+30);
     }
-    
+    /*
     public void moveUpAndDraw(Graphics window) {
 
         window.setColor(Color.WHITE);
@@ -94,17 +104,25 @@ public class Player extends Block{
         move("DOWN");
         draw(window);
     }
-    
+    */
     public void moveLeftAndDraw(Graphics window){
         window.setColor(Color.WHITE);
-        
+        /*
         window.drawLine(getX(), getY(), getX(), getY()-40);
         window.drawLine(getX(),getY(), getX()-20, getY()+20);
         window.drawLine(getX(),getY(), getX() +20, getY()+20);
         window.drawOval(getX()-10, getY()-60, 20, 20);
         window.drawLine(getX(), getY()-20 , getX()+25, getY()-30);
         window.drawLine(getX(), getY()-20 , getX()-25, getY()-30);
-        
+        */
+        int x = getX();
+        int y = getY();
+        window.drawLine(x+20, y+60, x+20, y+20);
+        window.drawLine(x+20,y+60, x, y+80);
+        window.drawLine(x+20,y+60, x +40, y+80);
+        window.drawOval(x+10, y, 20, 20);
+        window.drawLine(x+20, y+40 , x+45, y+30);
+        window.drawLine(x+20, y+40 , x-5, y+30);
         window.fillRect(getX(),getY(),getWidth(),getHeight());
         move("LEFT");
         draw(window);
@@ -112,18 +130,27 @@ public class Player extends Block{
     
     public void moveRightAndDraw(Graphics window){
         window.setColor(Color.WHITE);
-        
+        /*
         window.drawLine(getX(), getY(), getX(), getY()-40);
         window.drawLine(getX(),getY(), getX()-20, getY()+20);
         window.drawLine(getX(),getY(), getX() +20, getY()+20);
         window.drawOval(getX()-10, getY()-60, 20, 20);
         window.drawLine(getX(), getY()-20 , getX()+25, getY()-30);
         window.drawLine(getX(), getY()-20 , getX()-25, getY()-30);
-        
+        */
+        int x = getX();
+        int y = getY();
+        window.drawLine(x+20, y+60, x+20, y+20);
+        window.drawLine(x+20,y+60, x, y+80);
+        window.drawLine(x+20,y+60, x +40, y+80);
+        window.drawOval(x+10, y, 20, 20);
+        window.drawLine(x+20, y+40 , x+45, y+30);
+        window.drawLine(x+20, y+40 , x-5, y+30);
         window.fillRect(getX(),getY(),getWidth(),getHeight());
         move("RIGHT");
         draw(window);
     }
+    
     
     
 
@@ -132,14 +159,22 @@ public void draw(Graphics window) {
  
         
         window.setColor(Color.black);
-        
+        /*
         window.drawLine(getX(), getY(), getX(), getY()-40);
         window.drawLine(getX(),getY(), getX()-20, getY()+20);
         window.drawLine(getX(),getY(), getX() +20, getY()+20);
         window.drawOval(getX()-10, getY()-60, 20, 20);
         window.drawLine(getX(), getY()-20 , getX()+25, getY()-30);
         window.drawLine(getX(), getY()-20 , getX()-25, getY()-30);
-        
+        */
+        int x = getX();
+        int y = getY();
+        window.drawLine(x+20, y+60, x+20, y+20);
+        window.drawLine(x+20,y+60, x, y+80);
+        window.drawLine(x+20,y+60, x +40, y+80);
+        window.drawOval(x+10, y, 20, 20);
+        window.drawLine(x+20, y+40 , x+45, y+30);
+        window.drawLine(x+20, y+40 , x-5, y+30);
         
     }
     

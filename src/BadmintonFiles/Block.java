@@ -15,6 +15,10 @@ import java.awt.Graphics;
 public class Block extends MovingThing{
     
     private Color color;
+    private final int gravity = 10;
+    private final int terminalVelocity = 300;
+    private int verticalSpeed = 0;
+    private int verticalPosition;
         
     
     public Block(int x, int y, int w, int h)
@@ -40,6 +44,8 @@ public class Block extends MovingThing{
     public void setColor(Color col) {
         this.color = col;
     }
+    
+   
     
     public void draw(Graphics window) {
         //uncomment after you write the set and get methods
