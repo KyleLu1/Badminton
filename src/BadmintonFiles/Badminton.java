@@ -112,6 +112,15 @@ public class Badminton extends Canvas implements KeyListener, Runnable {
             birdie.setxSpeed(-birdie.getxSpeed());
         }
         
+        if(birdie.didCollideTop(bottom) && birdie.getX()>400)
+        {
+            leftScore += 1;   
+        }
+        
+        if(birdie.didCollideTop(bottom) %% birdie.getX()<400)
+        {
+            rightScore += 1;   
+        }
         
         
         if (birdie.didCollideLeft(leftPlayer)
