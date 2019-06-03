@@ -119,7 +119,7 @@ public class Badminton extends Canvas implements KeyListener, Runnable {
             birdie.setY(rightPlayer.getY() - 40);
         }
         
-        if(birdie.didCollideTop(bottom) %% birdie.getX()<400)
+        if(birdie.didCollideTop(bottom) && birdie.getX()<400)
         {
             rightScore += 1;   
             birdie.setX(leftPlayer.getX());
