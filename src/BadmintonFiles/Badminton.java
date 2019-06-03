@@ -128,12 +128,16 @@ public class Badminton extends Canvas implements KeyListener, Runnable {
         
         if(leftScore == 7)
         {
-            
+            graphToBack.drawString("Player One Wins!", 375, 200);
+            birdie.setXSpeed(0);
+            birdie.setYSpeed(0);
         }
         
         if(rightScore == 7)
         {
-            
+            graphToBack.drawString("Player Two Wins!", 375, 200);
+            birdie.setXSpeed(0);
+            birdie.setYSpeed(0);
         }
         
         if (birdie.didCollideLeft(leftPlayer)
