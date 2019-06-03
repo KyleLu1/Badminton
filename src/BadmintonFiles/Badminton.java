@@ -145,12 +145,12 @@ public class Badminton extends Canvas implements KeyListener, Runnable {
         
         if(rightPlayer.didCollideLeft(rightWall))
         {
-            rightPlayer.setY();
+            rightPlayer.setX();
         }
         
         if(rightPlayer.didCollideRight(net))
         {
-            rightPlayer.setY();
+            rightPlayer.setX();
         }
            
                
